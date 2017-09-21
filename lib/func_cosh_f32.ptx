@@ -15,13 +15,13 @@ $LDWbegin__Z6kernelPff:
 	mov.f32 	%f7, 0fbf317200;     	// -0.693146
 	mov.f32 	%f8, %f7;
 	mov.f32 	%f9, %f2;
-	mad.f32 %f10, %f6, %f8, %f9;
+	mad.rn.f32 %f10, %f6, %f8, %f9;
 	mov.f32 	%f11, %f10;
 	mov.f32 	%f12, %f5;
 	mov.f32 	%f13, 0fb5bfbe8e;    	// -1.42861e-06
 	mov.f32 	%f14, %f13;
 	mov.f32 	%f15, %f11;
-	mad.f32 %f16, %f12, %f14, %f15;
+	mad.rn.f32 %f16, %f12, %f14, %f15;
 	mov.f32 	%f17, %f16;
 	mov.f32 	%f18, 0f3fb8aa3b;    	// 1.4427
 	mul.f32 	%f19, %f17, %f18;
@@ -36,7 +36,7 @@ $LDWbegin__Z6kernelPff:
 	mov.f32 	%f28, 0f3e000000;    	// 0.125
 	div.approx.f32 	%f29, %f28, %f24;
 	mov.f32 	%f30, %f29;
-	mad.f32 %f31, %f26, %f27, %f30;
+	mad.rn.f32 %f31, %f26, %f27, %f30;
 	mov.f32 	%f32, %f31;
 	.loc	14	6	0
 	mov.f32 	%f33, 0f7f800000;    	// ((1.0F)/(0.0F))

@@ -52,19 +52,19 @@ $Lt_0_2562:
 	mov.f32 	%f19, %f16;
 	mov.f32 	%f20, 0f3c4c4be0;    	// 0.0124693
 	mov.f32 	%f21, %f20;
-	mad.f32 %f22, %f18, %f19, %f21;
+	mad.rn.f32 %f22, %f18, %f19, %f21;
 	mov.f32 	%f23, %f22;
 	mov.f32 	%f24, %f23;
 	mov.f32 	%f25, %f16;
 	mov.f32 	%f26, 0f3daaab50;    	// 0.0833346
 	mov.f32 	%f27, %f26;
-	mad.f32 %f28, %f24, %f25, %f27;
+	mad.rn.f32 %f28, %f24, %f25, %f27;
 	mov.f32 	%f29, %f28;
 	mul.f32 	%f30, %f16, %f29;
 	mov.f32 	%f31, %f30;
 	mov.f32 	%f32, %f15;
 	mov.f32 	%f33, %f14;
-	mad.f32 %f34, %f31, %f32, %f33;
+	mad.rn.f32 %f34, %f31, %f32, %f33;
 	mov.f32 	%f35, %f34;
 	cvt.rn.f32.s32 	%f36, %r11;
 	mov.f32 	%f37, %f36;
@@ -72,7 +72,7 @@ $Lt_0_2562:
 	mov.f32 	%f39, %f38;
 	add.f32 	%f40, %f9, %f35;
 	mov.f32 	%f41, %f40;
-	mad.f32 %f42, %f37, %f39, %f41;
+	mad.rn.f32 %f42, %f37, %f39, %f41;
 	mov.f32 	%f43, %f42;
 	.loc	16	8523	0
 	mov.f32 	%f44, %f43;

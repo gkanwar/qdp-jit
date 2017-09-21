@@ -23,31 +23,31 @@ $LDWbegin__Z6kernelPff:
 	mov.f32 	%f13, %f10;
 	mov.f32 	%f14, 0f3c94d2e9;    	// 0.018167
 	mov.f32 	%f15, %f14;
-	mad.f32 %f16, %f12, %f13, %f15;
+	mad.rn.f32 %f16, %f12, %f13, %f15;
 	mov.f32 	%f17, %f16;
 	mov.f32 	%f18, %f17;
 	mov.f32 	%f19, %f10;
 	mov.f32 	%f20, 0f3d3f841f;    	// 0.0467569
 	mov.f32 	%f21, %f20;
-	mad.f32 %f22, %f18, %f19, %f21;
+	mad.rn.f32 %f22, %f18, %f19, %f21;
 	mov.f32 	%f17, %f22;
 	mov.f32 	%f23, %f17;
 	mov.f32 	%f24, %f10;
 	mov.f32 	%f25, 0f3d994929;    	// 0.0748466
 	mov.f32 	%f26, %f25;
-	mad.f32 %f27, %f23, %f24, %f26;
+	mad.rn.f32 %f27, %f23, %f24, %f26;
 	mov.f32 	%f17, %f27;
 	mov.f32 	%f28, %f17;
 	mov.f32 	%f29, %f10;
 	mov.f32 	%f30, 0f3e2aab94;    	// 0.16667
 	mov.f32 	%f31, %f30;
-	mad.f32 %f32, %f28, %f29, %f31;
+	mad.rn.f32 %f32, %f28, %f29, %f31;
 	mov.f32 	%f17, %f32;
 	mul.f32 	%f33, %f10, %f17;
 	mov.f32 	%f34, %f33;
 	mov.f32 	%f35, %f9;
 	mov.f32 	%f36, %f9;
-	mad.f32 %f37, %f34, %f35, %f36;
+	mad.rn.f32 %f37, %f34, %f35, %f36;
 	mov.f32 	%f17, %f37;
 	.loc	14	6	0
 	add.f32 	%f38, %f17, %f17;

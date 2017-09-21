@@ -36,25 +36,25 @@ $Lt_0_8706:
 	mov.f32 	%f11, 0f3fc90000;    	// 1.57031
 	mov.f32 	%f12, %f11;
 	mov.f32 	%f13, %f2;
-	mad.f32 %f14, %f10, %f12, %f13;
+	mad.rn.f32 %f14, %f10, %f12, %f13;
 	mov.f32 	%f15, %f14;
 	mov.f32 	%f16, %f9;
 	mov.f32 	%f17, 0f39fd8000;    	// 0.000483513
 	mov.f32 	%f18, %f17;
 	mov.f32 	%f19, %f15;
-	mad.f32 %f20, %f16, %f18, %f19;
+	mad.rn.f32 %f20, %f16, %f18, %f19;
 	mov.f32 	%f21, %f20;
 	mov.f32 	%f22, %f9;
 	mov.f32 	%f23, 0f34a88000;    	// 3.13856e-07
 	mov.f32 	%f24, %f23;
 	mov.f32 	%f25, %f21;
-	mad.f32 %f26, %f22, %f24, %f25;
+	mad.rn.f32 %f26, %f22, %f24, %f25;
 	mov.f32 	%f27, %f26;
 	mov.f32 	%f28, %f9;
 	mov.f32 	%f29, 0f2e85a309;    	// 6.0771e-11
 	mov.f32 	%f30, %f29;
 	mov.f32 	%f31, %f27;
-	mad.f32 %f32, %f28, %f30, %f31;
+	mad.rn.f32 %f32, %f28, %f30, %f31;
 	mov.f32 	%f33, %f32;
 	.loc	16	8736	0
 	mov.f32 	%f34, %f33;
@@ -216,7 +216,7 @@ $Lt_0_9218:
 	mov.f32 	%f41, %f38;
 	mov.f32 	%f42, 0fbf52b7f4;    	// -0.823119
 	mov.f32 	%f43, %f42;
-	mad.f32 %f44, %f40, %f41, %f43;
+	mad.rn.f32 %f44, %f40, %f41, %f43;
 	mov.f32 	%f45, %f44;
 	mov.f32 	%f46, 0fc01e09d0;    	// -2.46935
 	add.f32 	%f47, %f38, %f46;
@@ -226,7 +226,7 @@ $Lt_0_9218:
 	mov.f32 	%f51, %f50;
 	mov.f32 	%f52, %f34;
 	mov.f32 	%f53, %f34;
-	mad.f32 %f54, %f51, %f52, %f53;
+	mad.rn.f32 %f54, %f51, %f52, %f53;
 	mov.f32 	%f55, %f54;
 	.loc	14	6	0
 	rcp.approx.f32 	%f56, %f55;

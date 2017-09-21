@@ -517,9 +517,9 @@ namespace QDP {
     if (!jit_ptx_version.empty())
       final_ptx << ".version " << jit_ptx_version << "\n";
     else
-      final_ptx << ".version 3.1\n";
+      final_ptx << ".version 5.0\n";
 
-    final_ptx << ".target sm_20\n";
+    final_ptx << ".target sm_61\n";
     final_ptx << ".address_size 64\n";
     
     if (m_shared)
@@ -692,7 +692,7 @@ namespace QDP {
 	std::ofstream out(fname);
 	out << ptx_kernel;
 	out.close();
-	QDP_error_exit("Abort.");
+	QDP_error_exit("Abort. %s", mapCuErrorString[ret].c_str());
       }
     }
 

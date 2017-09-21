@@ -14,13 +14,13 @@ $LDWbegin__Z6kernelPff:
 	mov.f32 	%f6, 0fbf317200;     	// -0.693146
 	mov.f32 	%f7, %f6;
 	mov.f32 	%f8, %f1;
-	mad.f32 %f9, %f5, %f7, %f8;
+	mad.rn.f32 %f9, %f5, %f7, %f8;
 	mov.f32 	%f10, %f9;
 	mov.f32 	%f11, %f4;
 	mov.f32 	%f12, 0fb5bfbe8e;    	// -1.42861e-06
 	mov.f32 	%f13, %f12;
 	mov.f32 	%f14, %f10;
-	mad.f32 %f15, %f11, %f13, %f14;
+	mad.rn.f32 %f15, %f11, %f13, %f14;
 	mov.f32 	%f16, %f15;
 	.loc	14	6	0
 	mov.f32 	%f17, 0f7f800000;    	// ((1.0F)/(0.0F))
