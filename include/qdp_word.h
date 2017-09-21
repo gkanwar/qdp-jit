@@ -159,6 +159,10 @@ public:
 public:
    T& elem() {return F;}
    const T& elem() const {return F;}
+   // gkanwar: Support implicitly casting to the underlying type
+   // For some reason, seems like some pieces of Chroma want this.
+   operator T() {return F;}
+   operator const T() const {return F;}
 
 private:
   T F;
