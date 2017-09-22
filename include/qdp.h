@@ -96,6 +96,10 @@ using std::ostream;
 
 
 #include "cuda.h"
+/// NOTE(gkanwar): Hack to avoid weird build issues with QDP-Lapack
+/// fprintf define conflicting with LLVM macro magic.
+#undef fprintf
+#undef printf
 #include "qdp_llvm.h"
 
 
