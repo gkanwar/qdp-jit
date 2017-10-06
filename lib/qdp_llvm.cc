@@ -302,19 +302,44 @@ namespace QDP {
     
     std::string ErrorMessage;
 
-    if ( QDP::LIBDEVICE::map_sm_lib.find( major*10 + minor ) == QDP::LIBDEVICE::map_sm_lib.end() )
+    // NOTE(gkanwar): First map compute capability to desired libdevice
+    // according to CUDA selection guidelines.
+    auto cc = major*10 + minor;
+    if (20 <= cc < 30) {
+      cc = 20;
+    }
+    else if (cc == 30) {
+      cc = 30;
+    }
+    else if (31 <= cc < 35) {
+      cc = 20;
+    }
+    else if (35 <= cc <= 37) {
+      cc = 35;
+    }
+    else if (37 < cc < 50) {
+      cc = 30;
+    }
+    else if (50 <= cc <= 53) {
+      cc = 50;
+    }
+    else {
+      cc = 30;
+    }
+
+    if ( QDP::LIBDEVICE::map_sm_lib.find( cc ) == QDP::LIBDEVICE::map_sm_lib.end() )
       {
-	QDPIO::cout << "Compute capability " << major*10 + minor << " not found in libdevice libmap\n";
+	QDPIO::cout << "Compute capability " << cc << " not found in libdevice libmap\n";
 	QDP_abort(1);
       }
-    if ( QDP::LIBDEVICE::map_sm_len.find( major*10 + minor ) == QDP::LIBDEVICE::map_sm_len.end() )
+    if ( QDP::LIBDEVICE::map_sm_len.find( cc ) == QDP::LIBDEVICE::map_sm_len.end() )
       {
-	QDPIO::cout << "Compute capability " << major*10 + minor << " not found in libdevice lenmap\n";
+	QDPIO::cout << "Compute capability " << cc << " not found in libdevice lenmap\n";
 	QDP_abort(1);
       }
 
-    llvm::StringRef libdevice_bc( (const char *) QDP::LIBDEVICE::map_sm_lib[ major*10 + minor ], 
-				  (size_t) QDP::LIBDEVICE::map_sm_len[ major*10 + minor ] );
+    llvm::StringRef libdevice_bc( (const char *) QDP::LIBDEVICE::map_sm_lib[ cc ], 
+				  (size_t) QDP::LIBDEVICE::map_sm_len[ cc ] );
 
     {
       llvm::ErrorOr<std::unique_ptr<llvm::MemoryBuffer> > BufferOrErr =
